@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+/* Enable dark mode variant */
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* Brand Colors */
+  --color-brand-teal: #0f3430;
+  --color-brand-teal-light: #1a4f48;
+  --color-brand-teal-lighter: #2d7a6e;
+  --color-brand-teal-dark: #0a2320;
+  --color-brand-lime: #e4ea6b;
+  --color-brand-lime-bright: #fff86b;
+  --color-brand-lime-dark: #c5cc4e;
+  --color-brand-gold: #f4b434;
+  --color-brand-gold-dark: #b8810d;
+  --color-brand-gold-light: #f9c85d;
+
+  /* Primary Action Color (Coral) - Accessible with black text (6.48:1 contrast) */
+  --color-brand-coral: #fc5340;
+  --color-brand-coral-dark: #e84332;
+  --color-brand-coral-darker: #d13627;
+  --color-brand-coral-light: #fd7566;
+  --color-brand-coral-text: #b82e20; /* For text on light backgrounds - 5.5:1 contrast */
+
+  /* Semantic Colors */
+  --color-primary: #0f3430;
+  --color-success: #34A853;
+  --color-warning: #e4ea6b;
+  --color-danger: #EA4335;
+
+  /* Light Theme Colors */
+  --color-background-light: #f2efeb;
+  --color-surface-light: #faf8f5;
+  --color-text-primary-light: #202124;
+  --color-text-secondary-light: #5F6368;
+
+  /* Dark Theme Colors */
+  --color-background-dark: #202124;
+  --color-surface-dark: #303134;
+  --color-text-primary-dark: #E8EAED;
+  --color-text-secondary-dark: #9AA0A6;
+
+  /* Vibrant Icon Colors (consistent across light/dark modes) */
+  --color-primary-blue: #1A73E8;
+  --color-primary-green: #34A853;
+  --color-primary-yellow: #F4B434;
+
+  /* Font Families */
+  --font-display: Poppins, Arial, sans-serif;
+  --font-body: Arial, Helvetica, sans-serif;
+
+  /* Shadows */
+  --shadow-soft: 0 2px 12px rgba(15, 52, 48, 0.08);
+  --shadow-hover: 0 4px 20px rgba(15, 52, 48, 0.12);
+}
