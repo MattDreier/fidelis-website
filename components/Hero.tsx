@@ -86,16 +86,18 @@ const Hero: React.FC = () => {
           {/* WHAT - Service CTAs */}
           <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
             <motion.a
-              href="mailto:contact@fidelisrenewables.com?subject=Emergency%20Repair%20Request"
+              href="tel:913-832-0513"
               className="w-full sm:w-auto px-8 py-3.5 bg-brand-coral text-black text-base font-bold rounded-full shadow-md hover:shadow-lg hover:bg-brand-coral-dark active:bg-brand-coral-darker transition-all text-center"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              Get Help Now
+              Call Now
             </motion.a>
 
             <motion.a
-              href="#contact"
+              href="https://calendar.app.google/Ww9xmnjG98NVX4cSA"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center gap-2 text-brand-coral-text dark:text-brand-coral font-semibold px-4 py-3 group hover:text-brand-coral-dark dark:hover:text-brand-coral-light transition-colors"
               whileHover={{ x: 5 }}
             >
