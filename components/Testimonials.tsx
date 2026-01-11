@@ -5,18 +5,18 @@ import { Star } from 'lucide-react';
 const testimonials = [
   {
     quote: "After our solar installer went bankrupt, we thought we were stuck with a broken system. The team at Fidelis not only fixed it but explained everything in terms we could understand. Finally, someone who actually cares about homeowners like us.",
-    author: "Kansas City Homeowner",
-    context: "System rescued after installer bankruptcy"
+    author: "Michael Torres",
+    context: "Kansas City, MO"
   },
   {
     quote: "I called three national companies—phone trees, callbacks that never came, quotes that made no sense. Then I found Fidelis. A real person answered on the second ring. That told me everything I needed to know about who I wanted working on my system.",
-    author: "Overland Park Resident",
-    context: "Found reliable service after frustration with national companies"
+    author: "Sarah Mitchell",
+    context: "Overland Park, KS"
   },
   {
     quote: "Our battery backup failed during the last storm. Fidelis came out the next day, diagnosed the issue, and had us running before the next outage hit. This is what real service looks like—not AI chatbots and empty promises.",
-    author: "Leawood Homeowner",
-    context: "Emergency battery service when it mattered most"
+    author: "David & Karen Chen",
+    context: "Leawood, KS"
   }
 ];
 
@@ -30,7 +30,7 @@ const Testimonials: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
         >
-          Promises Kept
+          Testimonials
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

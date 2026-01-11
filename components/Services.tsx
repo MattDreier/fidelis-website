@@ -7,18 +7,18 @@ const monitoringImage = `${import.meta.env.BASE_URL}assets/monitoring.webp`;
 
 const services = [
   {
-    title: "Solar System Repair",
-    desc: "Panels underperforming? Inverter errors? We diagnose what others couldn't—or wouldn't—fix. Root cause analysis. Real solutions.",
+    title: "Solar & Battery Systems",
+    desc: "Installation, maintenance, remove & reinstall for roof repairs, critter guard installation, you name it—we've done it.",
     image: solarRepairImage
   },
   {
-    title: "Battery Maintenance",
-    desc: "Your backup power should work when you need it. Health checks, firmware updates, and capacity testing—before the next storm hits.",
+    title: "Backup Power",
+    desc: "Batteries and generators should work when you need it most. Health checks, firmware updates, and capacity testing before the next storm hits.",
     image: batteryServiceImage
   },
   {
     title: "Performance Optimization",
-    desc: "Is your system delivering what it promised? We audit performance, identify weak spots, and optimize output. Data-driven answers, not guesswork.",
+    desc: "System monitoring is great, but who has their eye on the trends? If your system is not delivering what was promised we'll provide data-driven answers and take the action required to maximize performance.",
     image: monitoringImage
   }
 ];
@@ -33,7 +33,7 @@ const Services: React.FC = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          Protect Your Investment
+          What we can do for you
         </motion.h2>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
@@ -68,6 +68,16 @@ const Services: React.FC = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.p
+          className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-3xl mx-auto text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+        >
+          Your ROI depends on your system running like a well oiled machine. Join the thousands of solar customers in Kansas City with the peace of mind that Fidelis is on duty.
+        </motion.p>
       </div>
     </section>
   );

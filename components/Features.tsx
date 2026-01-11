@@ -54,10 +54,10 @@ const Features: React.FC = () => {
           className="flex flex-col gap-4 items-center"
         >
           <h2 className="font-display tracking-tight text-3xl md:text-4xl font-bold leading-tight max-w-2xl text-text-primary-light dark:text-text-primary-dark">
-            How We Keep Our Promise
+            How we operate
           </h2>
           <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-2xl">
-            Service the way it should be.
+            We're committed to honest, personal service so you can trust your solar investment is in good hands.
           </p>
         </motion.div>
 
