@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 
-const lightLogo = `${import.meta.env.BASE_URL}assets/light-mode-logo.png`;
-const darkLogo = `${import.meta.env.BASE_URL}assets/dark-mode-logo.png`;
+const logo = `${import.meta.env.BASE_URL}assets/logo-transparent.png`;
 const instagramIcon = `${import.meta.env.BASE_URL}assets/IG.webp`;
 
 const Header: React.FC = () => {
@@ -51,21 +50,12 @@ const Header: React.FC = () => {
     >
       <div className="max-w-[1200px] mx-auto px-4 md:px-10">
         <div className="flex items-center justify-between h-28">
-          {/* Logo - Cross-fade between light and dark versions */}
-          <div className="flex items-center z-50 relative">
+          {/* Logo */}
+          <div className="flex items-center z-50">
             <img
-              src={lightLogo}
+              src={logo}
               alt="Fidelis Renewables - Residential Solar & Battery Service"
-              className={`h-20 w-auto transition-opacity duration-300 ${
-                isDark ? 'opacity-0' : 'opacity-100'
-              }`}
-            />
-            <img
-              src={darkLogo}
-              alt="Fidelis Renewables - Residential Solar & Battery Service"
-              className={`h-20 w-auto absolute left-0 top-0 transition-opacity duration-300 ${
-                isDark ? 'opacity-100' : 'opacity-0'
-              }`}
+              className="h-20 w-auto"
             />
           </div>
 
