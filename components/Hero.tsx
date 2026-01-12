@@ -153,7 +153,7 @@ const Hero: React.FC = () => {
 
         {/* Right Image - Spring entrance with subtle overshoot */}
         <motion.div
-          className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] w-full"
+          className="relative rounded-2xl overflow-hidden shadow-2xl h-[280px] lg:h-[500px] w-full"
           initial={{ opacity: 0, scale: 0.95, x: 40 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
           transition={{
@@ -163,9 +163,15 @@ const Hero: React.FC = () => {
             scale: { type: "spring", stiffness: 100, damping: 15 }
           }}
         >
-          <div
-            className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-[2s] hover:scale-105"
-            style={{ backgroundImage: `url("${heroImage}")` }}
+          <img
+            src={heroImage}
+            alt="Modern home with rooftop solar panels"
+            width={800}
+            height={500}
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 w-full h-full object-cover object-[center_55%] lg:object-[center_40%] transition-transform duration-[2s] hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none"></div>
 
