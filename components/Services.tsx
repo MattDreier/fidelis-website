@@ -73,7 +73,7 @@ const Services: React.FC = () => {
         </div>
 
         <motion.p
-          className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-3xl mx-auto text-center mt-12"
+          className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-3xl mx-auto text-center mt-24"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
