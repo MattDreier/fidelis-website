@@ -16,7 +16,7 @@ const CallToAction: React.FC = () => {
           {/* Headline */}
           <div className="max-w-2xl">
             <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-text-primary-light dark:text-text-primary-dark mb-4">
-              Ready to Talk?
+              Ready to Go?
             </h2>
             <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark">
               No chatbots. No sales pitch. Just what you need before you need it.
