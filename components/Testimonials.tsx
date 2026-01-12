@@ -180,20 +180,20 @@ const Testimonials: React.FC = () => {
       const isScrollingDown = currentScrollY > lastScrollY.current;
       lastScrollY.current = currentScrollY;
 
-      const triggerLine = window.innerHeight * 0.65;
+      const triggerLine = window.innerHeight * 0.85;
 
       cardRefs.forEach((ref, index) => {
         if (!ref.current) return;
 
         const rect = ref.current.getBoundingClientRect();
-        const cardCenter = rect.top + rect.height / 2;
-        const cardTop = rect.top;
+        const cardThreeQuarter = rect.top + rect.height * 0.75;  // 3/4 mark (scrolling down)
+        const cardQuarter = rect.top + rect.height * 0.25;       // 1/4 mark (scrolling up)
 
         const api = mobileCarouselApis.current[index];
         if (!api) return;
 
-        // Scrolling down: trigger when card center passes trigger line
-        if (isScrollingDown && cardCenter < triggerLine && cardVersions[index] === 0) {
+        // Scrolling down: trigger when 3/4 mark passes trigger line
+        if (isScrollingDown && cardThreeQuarter < triggerLine && cardVersions[index] === 0) {
           api.scrollTo(1);
           setCardVersions(prev => {
             const next = [...prev];
@@ -201,8 +201,8 @@ const Testimonials: React.FC = () => {
             return next;
           });
         }
-        // Scrolling up: trigger when card top passes below trigger line (hysteresis)
-        else if (!isScrollingDown && cardTop > triggerLine && cardVersions[index] === 1) {
+        // Scrolling up: trigger when 1/4 mark passes below trigger line (hysteresis)
+        else if (!isScrollingDown && cardQuarter > triggerLine && cardVersions[index] === 1) {
           api.scrollTo(0);
           setCardVersions(prev => {
             const next = [...prev];
