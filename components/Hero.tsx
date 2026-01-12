@@ -46,6 +46,30 @@ const colorClasses = {
   }
 };
 
+// Animation variants for orchestrated entrance
+const containerVariants = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.1,
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.6,
+      ease: [0.25, 0.46, 0.45, 0.94], // Smooth decel with subtle settle
+    },
+  },
+};
+
 const Hero: React.FC = () => {
   const [currentOffer, setCurrentOffer] = useState(0);
 
@@ -61,35 +85,48 @@ const Hero: React.FC = () => {
     <section className="relative pt-32 pb-16 px-4 md:px-10 overflow-hidden bg-background-light dark:bg-background-dark transition-colors duration-300">
       <div className="max-w-[1200px] mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
-        {/* Left Content */}
+        {/* Left Content - Staggered entrance */}
         <motion.div
           className="flex flex-col gap-6 text-left z-10"
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
         >
           {/* WHY - The belief */}
-          <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-text-primary-light dark:text-text-primary-dark">
+          <motion.h1
+            className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight text-text-primary-light dark:text-text-primary-dark"
+            variants={itemVariants}
+          >
             Promises Kept.
-          </h1>
+          </motion.h1>
 
           {/* HOW - The differentiators */}
-          <p className="text-lg leading-relaxed text-text-secondary-light dark:text-text-secondary-dark max-w-xl">
+          <motion.p
+            className="text-lg leading-relaxed text-text-secondary-light dark:text-text-secondary-dark max-w-xl"
+            variants={itemVariants}
+          >
             Your investment in solar is here to stay—even if the installer went bankrupt or a fly-by-night solar bro won't answer your calls. Our electricians are solar industry veterans who will get boots on the roof and make it right.
-          </p>
+          </motion.p>
 
           {/* Qualifying question */}
-          <p className="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark">
+          <motion.p
+            className="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark"
+            variants={itemVariants}
+          >
             Do you need a hand with your system?
-          </p>
+          </motion.p>
 
           {/* WHAT - Service CTAs */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4">
+          <motion.div
+            className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-4"
+            variants={itemVariants}
+          >
             <motion.a
               href="tel:913-832-0513"
               className="w-full sm:w-auto px-8 py-3.5 bg-brand-coral text-black text-base font-bold rounded-full shadow-md hover:shadow-lg hover:bg-brand-coral-dark active:bg-brand-coral-darker transition-all text-center"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
+              whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)" }}
+              whileTap={{ scale: 0.98 }}
+              transition={{ type: "spring", stiffness: 400, damping: 17 }}
             >
               Call Now
             </motion.a>
@@ -100,19 +137,31 @@ const Hero: React.FC = () => {
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-brand-coral-text dark:text-brand-coral font-semibold px-4 py-3 group hover:text-brand-coral-dark dark:hover:text-brand-coral-light transition-colors"
               whileHover={{ x: 5 }}
+              transition={{ type: "spring", stiffness: 300, damping: 20 }}
             >
               Schedule a Free Inspection
-              <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+              <motion.span
+                className="inline-block"
+                whileHover={{ x: 2, rotate: -10 }}
+                transition={{ type: "spring", stiffness: 300, damping: 15 }}
+              >
+                <ArrowRight className="w-5 h-5" />
+              </motion.span>
             </motion.a>
-          </div>
+          </motion.div>
         </motion.div>
 
-        {/* Right Image */}
+        {/* Right Image - Spring entrance with subtle overshoot */}
         <motion.div
           className="relative rounded-2xl overflow-hidden shadow-2xl h-[400px] lg:h-[500px] w-full"
-          initial={{ opacity: 0, scale: 0.9, x: 50 }}
+          initial={{ opacity: 0, scale: 0.95, x: 40 }}
           animate={{ opacity: 1, scale: 1, x: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+          transition={{
+            duration: 0.7,
+            delay: 0.15,
+            ease: [0.16, 1, 0.3, 1], // Slight overshoot curve
+            scale: { type: "spring", stiffness: 100, damping: 15 }
+          }}
         >
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center transition-transform duration-[2s] hover:scale-105"
@@ -126,10 +175,10 @@ const Hero: React.FC = () => {
               <motion.div
                 key={currentOffer}
                 className="p-4 bg-white/90 dark:bg-background-dark/90 backdrop-blur-md rounded-xl flex items-center gap-4 shadow-lg border border-white/50 dark:border-gray-700 transition-colors duration-300"
-                initial={{ opacity: 0, y: 20 }}
+                initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.5 }}
+                exit={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.4, ease: [0.4, 0, 0.2, 1] }}
               >
                 <div className={`${colorClasses[offers[currentOffer].color].bg} p-2 rounded-full flex-shrink-0`}>
                   {React.createElement(offers[currentOffer].icon, {
