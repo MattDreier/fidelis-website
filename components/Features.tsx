@@ -343,7 +343,7 @@ const Features: React.FC = () => {
                   key={`${activeSet}-${i}`}
                   variants={cardVariants}
                   whileHover={{ y: -8, boxShadow: "0 20px 30px -10px rgba(0, 0, 0, 0.1)" }}
-                  className="flex flex-col gap-4 rounded-2xl border border-gray-100 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-8 text-left transition-all duration-300"
+                  className="flex flex-col gap-4 rounded-2xl border border-gray-100 dark:border-gray-800 bg-surface-light dark:bg-surface-dark p-8 text-left transition-colors duration-300"
                 >
                   <div className={`flex items-center justify-center w-14 h-14 rounded-full ${card.bg} mb-2`}>
                     {card.icon}
