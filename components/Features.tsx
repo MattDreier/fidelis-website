@@ -16,8 +16,8 @@ const features = [
     desc: "Not a national platform. A licensed master electrician who lives in Kansas City and stakes their reputation on every job."
   },
   {
-    icon: <ShieldCheck className="w-7 h-7 text-primary-blue" />,
-    bg: "bg-primary-blue/10",
+    icon: <ShieldCheck className="w-7 h-7 text-brand-coral" />,
+    bg: "bg-brand-coral/10",
     title: "Long-Term Partnership",
     desc: "Your solar system is a serious investment. We treat it like one—not a service call to rush through."
   }

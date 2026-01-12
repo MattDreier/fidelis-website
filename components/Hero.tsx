@@ -75,12 +75,12 @@ const Hero: React.FC = () => {
 
           {/* HOW - The differentiators */}
           <p className="text-lg leading-relaxed text-text-secondary-light dark:text-text-secondary-dark max-w-xl">
-            Your investment in solar is here to stay—even if your installer went bankrupt or a fly-by-night solar bro won't answer your calls. Kansas City homeowners deserve a dependable service partner.
+            Your investment in solar is here to stay—even if the installer went bankrupt or a fly-by-night solar bro won't answer your calls. Our electricians are solar industry veterans who will get boots on the roof and make it right.
           </p>
 
           {/* Qualifying question */}
           <p className="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark">
-            Is your system down right now?
+            Do you need a hand with your system?
           </p>
 
           {/* WHAT - Service CTAs */}
