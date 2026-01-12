@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import { User, Award, ShieldCheck, Zap, Handshake, TrendingUp } from 'lucide-react';
 
@@ -98,21 +98,45 @@ const cardVariants = {
 const Features: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);
   const [activeSet, setActiveSet] = useState<0 | 1>(0);
+  const hasMounted = useRef(false);
+
+  // Delay scroll-based changes until after initial render to prevent flicker
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      hasMounted.current = true;
+    }, 100);
+    return () => clearTimeout(timer);
+  }, []);
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start 0.7", "end 0.3"]
   });
 
+  // Track peak progress to prevent reset when section goes out of view
+  const peakProgress = useRef(0);
+
   // Hysteresis to prevent flicker at boundary
   const THRESHOLD = 0.4;
   const HYSTERESIS = 0.05;
 
   useMotionValueEvent(scrollYProgress, "change", (progress) => {
+    // Skip scroll-based changes until component has mounted
+    if (!hasMounted.current) return;
+    // Track the highest progress we've reached
+    if (progress > peakProgress.current) {
+      peakProgress.current = progress;
+    }
+
+    // Only allow forward transition when scrolling down
     if (activeSet === 0 && progress > THRESHOLD + HYSTERESIS) {
       setActiveSet(1);
-    } else if (activeSet === 1 && progress < THRESHOLD - HYSTERESIS) {
+    }
+    // Only allow backward transition if we're actually scrolling through the section
+    // (progress is decreasing but still above a minimum indicating section is in view)
+    else if (activeSet === 1 && progress < THRESHOLD - HYSTERESIS && progress > 0.1) {
       setActiveSet(0);
+      peakProgress.current = 0; // Reset peak when transitioning back
     }
   });
 
