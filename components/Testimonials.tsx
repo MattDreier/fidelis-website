@@ -277,9 +277,6 @@ const Testimonials: React.FC = () => {
           <h2 className="font-display tracking-tight text-3xl md:text-4xl font-bold leading-tight max-w-2xl text-text-primary-light dark:text-text-primary-dark">
             Testimonials
           </h2>
-          <p className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-2xl">
-            Real stories from Kansas City homeowners who trust Fidelis with their solar systems.
-          </p>
         </motion.div>
 
         {/* Testimonials */}

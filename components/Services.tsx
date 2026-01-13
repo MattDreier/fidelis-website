@@ -7,7 +7,7 @@ const monitoringImage = `${import.meta.env.BASE_URL}assets/monitoring.webp`;
 
 const services = [
   {
-    title: "Solar & Battery Systems",
+    title: "Solar Panels",
     desc: "Installation, maintenance, remove & reinstall for roof repairs, critter guard installation, you name it—we've done it.",
     image: solarRepairImage
   },
@@ -73,7 +73,7 @@ const Services: React.FC = () => {
         </div>
 
         <motion.p
-          className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-3xl mx-auto text-center mt-24"
+          className="text-lg text-text-secondary-light dark:text-text-secondary-dark max-w-3xl mx-auto text-center mt-32"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

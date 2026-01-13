@@ -1,49 +1,49 @@
 import React, { useRef, useState, useEffect, useCallback } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
-import { User, Award, ShieldCheck, Zap, Handshake, TrendingUp } from 'lucide-react';
+import { User, ShieldCheck, Zap, Heart, Brain, MapPin } from 'lucide-react';
 import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from './ui/carousel';
 
-// Set 1: Service Values (Blue, Green, Red)
+// Set 1: Our Approach (Blue, Green, Coral)
 const serviceValues = [
   {
     icon: <User className="w-7 h-7 text-primary-blue" />,
     bg: "bg-primary-blue/10",
-    title: "Real People Answer",
-    desc: "No chatbots. No phone trees. No scripts. When you call, you get a master electrician who listens."
+    title: "We Pick Up the Phone",
+    desc: "You call, a master electrician answers. Not a recording. Not a callback. A real conversation."
   },
   {
-    icon: <TrendingUp className="w-7 h-7 text-primary-green" />,
+    icon: <ShieldCheck className="w-7 h-7 text-primary-green" />,
     bg: "bg-primary-green/10",
-    title: "Protected Investment",
-    desc: "Maximize your ROI with proactive maintenance. We catch small issues before they become expensive problems."
+    title: "We Catch Problems Early",
+    desc: "Small issues become expensive ones. We find them first so you don't pay later."
   },
   {
-    icon: <ShieldCheck className="w-7 h-7 text-brand-coral" />,
+    icon: <Heart className="w-7 h-7 text-brand-coral" />,
     bg: "bg-brand-coral/10",
-    title: "Long-Term Partnership",
-    desc: "Your solar system is a serious investment. We treat it like one—not a service call to rush through."
+    title: "We Think in Years, Not Jobs",
+    desc: "Your system is a 25-year investment. We're not here to rush through a ticket."
   }
 ];
 
-// Set 2: Customer Benefits (Red, Gray, Blue)
+// Set 2: Our Process (Coral, Gray, Blue)
 const customerBenefits = [
   {
     icon: <Zap className="w-7 h-7 text-brand-coral" />,
     bg: "bg-brand-coral/10",
-    title: "Fast Response",
-    desc: "Same-day diagnosis for urgent issues. No weeks of waiting while your system sits broken."
+    title: "We Show Up Fast",
+    desc: "Same-day diagnosis for urgent issues. No weeks of waiting while your panels sit idle."
   },
   {
-    icon: <Handshake className="w-7 h-7 text-gray-500 dark:text-gray-400" />,
+    icon: <Brain className="w-7 h-7 text-gray-500 dark:text-gray-400" />,
     bg: "bg-gray-100 dark:bg-gray-700",
-    title: "Lifetime Support",
-    desc: "We remember your system. Every service call builds on the last—no starting from scratch."
+    title: "We Remember Your System",
+    desc: "Every visit builds on the last. No starting over. No explaining twice."
   },
   {
-    icon: <Award className="w-7 h-7 text-primary-blue" />,
+    icon: <MapPin className="w-7 h-7 text-primary-blue" />,
     bg: "bg-primary-blue/10",
-    title: "Local Expertise",
-    desc: "Not a national platform. A licensed master electrician who lives in Kansas City and stakes their reputation on every job."
+    title: "We Live Here Too",
+    desc: "A Kansas City electrician with a Kansas City reputation. No hiding behind a 1-800 number."
   }
 ];
 

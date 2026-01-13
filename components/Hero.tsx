@@ -105,7 +105,7 @@ const Hero: React.FC = () => {
             className="text-lg leading-relaxed text-text-secondary-light dark:text-text-secondary-dark max-w-xl"
             variants={itemVariants}
           >
-            Your investment in solar is here to stay—even if the installer went bankrupt or a fly-by-night solar bro won't answer your calls. Our electricians are solar industry veterans who will get boots on the roof and make it right.
+            Your investment in solar is here to stay—even if the installer went bankrupt or a fly-by-night solar bro won't answer your calls. Our electricians are solar industry veterans who put boots on the roof and make it right.
           </motion.p>
 
           {/* Qualifying question */}
