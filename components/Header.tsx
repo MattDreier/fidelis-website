@@ -3,12 +3,20 @@ import { motion, useScroll, useMotionValueEvent } from 'framer-motion';
 import { Sun, Moon } from 'lucide-react';
 
 const logo = `${import.meta.env.BASE_URL}assets/logo-transparent.png`;
+const altLogoLight = `${import.meta.env.BASE_URL}assets/alt-logo-light-mode.png`;
+const altLogoDark = `${import.meta.env.BASE_URL}assets/alt-logo-dark-mode.png`;
 const instagramIcon = `${import.meta.env.BASE_URL}assets/IG.webp`;
 
 const Header: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDark, setIsDark] = useState(false);
+  const [useAltLogo, setUseAltLogo] = useState(false);
   const { scrollY } = useScroll();
+
+  // Determine which logo to display based on alt toggle and theme
+  const currentLogo = useAltLogo
+    ? (isDark ? altLogoDark : altLogoLight)
+    : logo;
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 20);
@@ -51,13 +59,17 @@ const Header: React.FC = () => {
       <div className="max-w-[1200px] mx-auto px-4 md:px-10">
         <div className="flex items-center justify-between h-28">
           {/* Logo */}
-          <div className="flex items-center z-50">
+          <button
+            onClick={() => setUseAltLogo(!useAltLogo)}
+            className="flex items-center z-50 cursor-pointer"
+            aria-label="Toggle logo variant"
+          >
             <img
-              src={logo}
+              src={currentLogo}
               alt="Fidelis Renewables - Residential Solar & Battery Service"
               className="h-20 w-auto"
             />
-          </div>
+          </button>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-6">
