@@ -49,6 +49,8 @@ build/
 screenshots/
 *-dark-mode.png
 *-light-mode.png
+# But keep actual logo assets
+!public/assets/alt-logo-*.png
 *-hover.png
 desktop-*.png
 tablet-*.png
