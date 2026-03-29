@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
             <h3 className="font-display font-medium text-text-primary-light dark:text-text-primary-dark mb-4 text-base">Contact</h3>
             <ul className="space-y-3 text-sm text-text-secondary-light dark:text-text-secondary-dark">
               <li><a href="mailto:contact@fidelisrenewables.com" className="hover:text-brand-teal transition-colors">contact@fidelisrenewables.com</a></li>
-              <li><a href="tel:+19138320513" className="hover:text-brand-teal transition-colors">(913) 832-0513</a></li>
+              <li><a href="tel:+19137774077" className="hover:text-brand-teal transition-colors">(913) 777-4077</a></li>
               <li className="text-text-secondary-light dark:text-text-secondary-dark">Kansas City Metro Area</li>
               <li className="text-text-secondary-light dark:text-text-secondary-dark">Licensed Master Electrician</li>
             </ul>

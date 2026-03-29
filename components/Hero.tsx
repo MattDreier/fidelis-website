@@ -122,7 +122,7 @@ const Hero: React.FC = () => {
             variants={itemVariants}
           >
             <motion.a
-              href="tel:913-832-0513"
+              href="tel:913-777-4077"
               className="w-full sm:w-auto px-8 py-3.5 bg-brand-coral text-black text-base font-bold rounded-full shadow-md hover:shadow-lg hover:bg-brand-coral-dark active:bg-brand-coral-darker transition-all text-center"
               whileHover={{ scale: 1.02, boxShadow: "0 10px 30px -10px rgba(0,0,0,0.3)" }}
               whileTap={{ scale: 0.98 }}
@@ -132,7 +132,7 @@ const Hero: React.FC = () => {
             </motion.a>
 
             <motion.a
-              href="https://calendar.app.google/Ww9xmnjG98NVX4cSA"
+              href="https://calendar.app.google/SNTyEdzePgvayhA78"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-brand-coral-text dark:text-brand-coral font-semibold px-4 py-3 group hover:text-brand-coral-dark dark:hover:text-brand-coral-light transition-colors"

@@ -6,23 +6,23 @@ import { Carousel, CarouselContent, CarouselItem, type CarouselApi } from './ui/
 // All 6 testimonials in order
 const allTestimonials = [
   {
-    quote: "After our solar installer went bankrupt, we thought we were stuck with a broken system. The team at Fidelis not only fixed it but explained everything in terms we could understand. Finally, someone who actually cares about homeowners like us.",
-    author: "Michael Torres",
+    quote: "After 10 years of having solar panels, we decided to get a backup battery installed. We received multiple bids from several companies and decided to go with Fidelis. I dealt with Alex and from start to finish, the entire transaction went smoothly. He was patient with my endless questions and concerns. The project was completed on time. The installation team was punctual, polite, and cleaned up prior to leaving. I highly recommend them and will use them again in the future.",
+    author: "Jay Roberts",
     context: "Kansas City, MO"
   },
   {
-    quote: "I called three national companies—phone trees, callbacks that never came, quotes that made no sense. Then I found Fidelis. A real person answered on the second ring. That told me everything I needed to know about who I wanted working on my system.",
-    author: "Sarah Mitchell",
+    quote: "My experience with Fidelis has been nothing short of excellent. From the very beginning, the process felt smooth and well-coordinated. The team was clearly knowledgeable and completely transparent, which made the entire installation feel effortless on my end. Communication was consistent and easy to follow, and the final walkthrough was especially helpful. I feel genuinely confident about the future of my home's energy setup. Highly recommended!",
+    author: "Amanda Hankins",
     context: "Overland Park, KS"
   },
   {
-    quote: "Our battery backup failed during the last storm. Fidelis came out the next day, diagnosed the issue, and had us running before the next outage hit. This is what real service looks like—not AI chatbots and empty promises.",
-    author: "David & Karen Chen",
+    quote: "Working with Fidelis was smooth sailing! Excellent experience from start to finish. The team was knowledgeable, transparent, and made the install seem easy. Really good communication and final walkthrough of how to use the app, what to track, and how to see the best results. I feel confident about what the future has in store at my house!",
+    author: "Brian Polodna",
     context: "Leawood, KS"
   },
   {
-    quote: "We had a solar company tell us our panels were fine when they clearly weren't producing. Fidelis came out, showed us the monitoring data, and fixed an inverter issue no one else caught. Honest diagnostics make all the difference.",
-    author: "Jennifer Adams",
+    quote: "Fidelis did a remarkable job helping me correct loose ends left over by a previous installer. Dan Fuqua is managing things and doing a superb, reliable, dedicated job taking care of business. He's been very responsive, which is an outstanding attribute. Thank you!",
+    author: "Ken Scott",
     context: "Lee's Summit, MO"
   },
   {
